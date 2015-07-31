@@ -33,17 +33,17 @@ FEX_CONTENT=
 BIN2FEX="/usr/bin/bin2fex"
 FEX2BIN="/usr/bin/fex2bin"
 
-if [ -f $SCRIPT_BIN ];then
-	FEX_CONTENT=$($BIN2FEX $SCRIPT_BIN 2>/dev/null)
-	if grep -qi "^\s*MAC\s*=" <<< "$FEX_CONTENT";then
-		HAS_SUNXI_EMAC=true
-	else
-		HAS_SUNXI_EMAC=false
-	fi
-else
-	echo "$N warning: script.bin not found"
-	HAS_SUNXI_EMAC=false
-fi
+#if [ -f $SCRIPT_BIN ];then
+#	FEX_CONTENT=$($BIN2FEX $SCRIPT_BIN 2>/dev/null)
+#	if grep -qi "^\s*MAC\s*=" <<< "$FEX_CONTENT";then
+#		HAS_SUNXI_EMAC=true
+#	else
+#		HAS_SUNXI_EMAC=false
+#	fi
+#else
+#	echo "$N warning: script.bin not found"
+#	HAS_SUNXI_EMAC=false
+#fi
 
 genEmac(){
 if [ ! -f $CUBIAN_EMAC ];then
