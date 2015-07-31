@@ -73,10 +73,10 @@ case "$1" in
         fi
 		screen_print "........ok\n"
 		sleep 1
-		screen_print " * Regenerating ajenti SSL keys"
-		/usr/bin/ajenti-ssl-gen `/bin/hostname` -f
-		screen_print "........ok\n"
-		sleep 1
+		#screen_print " * Regenerating ajenti SSL keys"
+		#/usr/bin/ajenti-ssl-gen `/bin/hostname` -f
+		#screen_print "........ok\n"
+		#sleep 1
 		if [ -b "/dev/mmcblk0" ];then
 		set +e
 		screen_print " * Expanding file system to fit your SD-card"
