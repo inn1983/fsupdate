@@ -27,7 +27,7 @@ set -e
 SCRIPT_BIN="/boot/script.bin"
 CUBIAN_EMAC="/root/.cubian-emac"
 IF="eth0"
-HAS_SUNXI_EMAC=
+HAS_SUNXI_EMAC=false
 EMAC=
 FEX_CONTENT=
 BIN2FEX="/usr/bin/bin2fex"
