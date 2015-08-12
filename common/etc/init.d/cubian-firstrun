@@ -92,6 +92,19 @@ case "$1" in
 		fi
 		set -e
 		fi
+		
+		#install nodejs for autossh
+		wget https://deb.nodesource.com/setup_0.12 -O /tmp/nodejssetup.sh
+		bash /tmp/nodejssetup.sh
+		apt-get -y install nodejs
+		npm install forever -g
+		cd /etc/autossh_monitor
+		npm install
+		chmod -R a+x node_modules
+		chmod -R a+r node_modules 
+		echo '/etc/zuiki_autossh.sh' >> ${ROOTFS_DIR}/etc/rc.local
+		chmod a+x /etc/zuiki_autossh.sh
+
 		/sbin/insserv -r cubian-firstrun
 		/usr/bin/touch /root/.firstRun
 		if $reboot;then
