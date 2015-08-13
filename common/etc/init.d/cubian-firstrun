@@ -94,7 +94,7 @@ case "$1" in
 		fi
 		
 		#enable autossh
-		sed -e "13i /etc/zuiki_autossh.sh" /etc/rc.local
+		sed -e "13i /etc/zuiki_autossh.sh" /etc/rc.local > /etc/rc.local
 		
 		/sbin/insserv -r cubian-firstrun
 		/usr/bin/touch /root/.firstRun
