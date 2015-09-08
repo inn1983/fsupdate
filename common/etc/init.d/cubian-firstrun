@@ -42,12 +42,11 @@ do_expand_rootfs(){
 		log "Failed to expand rootfs, /dev/root is not the last partition"
 		return 3
 	fi
-	part_start=$(parted ${device} -ms unit s p | grep "^${part_num}" | cut -f 2 -d:)
+	part_start=$(parted ${device} -ms unit s p | grep "^${part_num}" | cut -f 2 -d: | sed 's/s//g')
 	[ "$part_start" ] || return 4
 	echo "
 p
 d
-${part_num}
 n
 p
 ${part_num}
