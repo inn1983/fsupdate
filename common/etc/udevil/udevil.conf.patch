@@ -25,7 +25,7 @@
 -default_options_vfat      = nosuid, noexec, nodev, noatime, fmask=0133, dmask=0022, uid=$UID, gid=$GID, utf8
 -default_options_msdos     = nosuid, noexec, nodev, noatime, fmask=0133, dmask=0022, uid=$UID, gid=$GID
 -default_options_umsdos    = nosuid, noexec, nodev, noatime, fmask=0133, dmask=0022, uid=$UID, gid=$GID
--default_options_ntfs      = nosuid, noexec, nodev, noatime, uid=$UID, gid=$GID, utf8
+-default_options_ntfs      = nosuid, noexec, nodev, noatime, fmask=0133, uid=$UID, gid=$GID, utf8
 +default_options_vfat      = nosuid, noexec, nodev, noatime, fmask=0000, dmask=0000, uid=$UID, gid=$GID, utf8
 +default_options_msdos     = nosuid, noexec, nodev, noatime, fmask=0000, dmask=0000, uid=$UID, gid=$GID
 +default_options_umsdos    = nosuid, noexec, nodev, noatime, fmask=0000, dmask=0000, uid=$UID, gid=$GID
