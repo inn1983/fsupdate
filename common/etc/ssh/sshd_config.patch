@@ -9,16 +9,16 @@
  # Use these options to restrict which interfaces/protocols sshd will bind to
  #ListenAddress ::
  #ListenAddress 0.0.0.0
-@@ -24,7 +24,7 @@
+@@ -25,7 +25,7 @@
  
  # Authentication:
  LoginGraceTime 120
--PermitRootLogin yes
+-PermitRootLogin without-password
 +PermitRootLogin no
  StrictModes yes
  
  RSAAuthentication yes
-@@ -85,3 +85,5 @@
+@@ -83,3 +83,5 @@
  # PAM authentication, then enable this but set PasswordAuthentication
  # and ChallengeResponseAuthentication to 'no'.
  UsePAM yes
