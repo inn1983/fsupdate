@@ -33,9 +33,9 @@ do_expand_rootfs(){
 	#root_part=$(/bin/readlink /dev/root)
 	root_part=$(/bin/mount | /usr/bin/awk 'NR==1 {print $1}')
 	part_num=${root_part#/dev/mmcblk0p}
-	#if [ "$part_num" = "$root_part" ];then
-	#	log "Failed to expand rootfs, must be run on a SD card"
-	#	return 1
+	if [ "$part_num" = "$root_part" ];then
+		log "Failed to expand rootfs, must be run on a SD card"
+		return 1
 	fi
 	last_part_num=$(/sbin/parted ${device} -ms unit s p | tail -n 1 | cut -f 1 -d:)
 	if [ "$last_part_num" != "$part_num" ];then
