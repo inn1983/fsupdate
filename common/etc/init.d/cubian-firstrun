@@ -94,7 +94,7 @@ case "$1" in
 		fi
 
 		#enable autossh
-		sed -e "13i /etc/zuiki_autossh.sh" /etc/rc.local > /etc/rc.local.tmp
+		sed -e "13i /etc/zuiki_start.sh" /etc/rc.local > /etc/rc.local.tmp
 		mv /etc/rc.local /etc/rc.local.orig
 		mv /etc/rc.local.tmp /etc/rc.local
 		chmod a+x /etc/rc.local
