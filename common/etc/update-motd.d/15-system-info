@@ -26,11 +26,11 @@ echo "$memInfo" | grep MemFree | awk '{print $2}'
 }
 
 get_disk_total(){
-echo "$diskInfo" | grep /dev/root | awk '{print $2}'
+echo "$diskInfo" | grep rootfs | awk 'NR == 1 {print $2}'
 }
 
 get_disk_usage(){
-echo "$diskInfo" | grep /dev/root | awk '{print $5}'
+echo "$diskInfo" | grep rootfs | awk 'NR == 1 {print $5}'
 }
 
 memTotal=$(get_mem_total)
