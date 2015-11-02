@@ -8,7 +8,7 @@ set -e
 LOCKFILE=/var/lock/cubian-ntpdate.lock
 SUCCESS_LOCKFILE=/var/lock/cubian-ntpdate-success.lock
 DELAY=${1:-0}
-MAX_AVG=0.8
+MAX_AVG=3.8
 
 if [ -f $LOCKFILE ];then
 	exit 0
