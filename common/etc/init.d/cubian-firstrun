@@ -93,11 +93,15 @@ case "$1" in
 		set -e
 		fi
 
-		#enable autossh
+		#enable autorun
 		sed -e "13i /etc/zuiki_start.sh" /etc/rc.local > /etc/rc.local.tmp
 		mv /etc/rc.local /etc/rc.local.orig
 		mv /etc/rc.local.tmp /etc/rc.local
 		chmod a+x /etc/rc.local
+
+		#enable cron
+		cd /home/ddcamuser/ansible_playbook
+		/usr/local/bin/ansible-playbook ./install.yml
 
 		/sbin/insserv -r cubian-firstrun
 		/usr/bin/touch /root/.firstRun
